@@ -3,7 +3,7 @@ import random
 number = random.randint(-10000, 10000)
 first = f"Last digit of {number} "
 if number < 0:
-    first -= f"is -{str(number)[-1]} "
+    first += f"is -{str(number)[-1]} "
 else:
     first += f"is {str(number)[-1]} "
 if int(str(number)[-1])>5:
