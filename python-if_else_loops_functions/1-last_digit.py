@@ -8,7 +8,7 @@ else:
     last = int(str(number)[-1])
 text = f"Last digit of {number} is {last} "
 if last > 5:
-    text = text +  "and is greater than 5"
+    text = text + "and is greater than 5"
 if last == 0:
     text = text + "and is 0"
 if last != 0 and last < 6:
