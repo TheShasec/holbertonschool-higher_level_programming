@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-a= "".join(["{}".format(chr()) for i in range(97,123) if i != 101 and i != 113])
+a= "".join(["{}".format(chr(i)) for i in range(97,123) if i != 101 and i != 113])
 print(a.strip())
