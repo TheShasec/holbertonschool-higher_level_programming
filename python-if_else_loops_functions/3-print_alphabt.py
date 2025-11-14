@@ -1,3 +1,7 @@
 #!/usr/bin/python3
-a= "".join(["{}".format(chr(i)) for i in range(97,123) if i != 101 and i != 113])
-print(a.strip())
+x=""
+for i in range(97, 123):
+    if i == 101 or i == 113:
+        continue
+    x = x + "{}".format(chr(i))
+print(x)
