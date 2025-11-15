@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def print_last_digit(number):i
+def print_last_digit(number):
     try:
         a=int(number)
     except ValueError:
