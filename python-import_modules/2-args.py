@@ -6,7 +6,7 @@ if __name__ == "__main__":
     if myl-1 == 0:
         print("{} arguments.".format(myl-1))
     else:
-        if myl-1 == 1:i
+        if myl-1 == 1:
             print("{} argument:".format(myl-1))
         else:
             print("{} arguments:".format(myl-1))
