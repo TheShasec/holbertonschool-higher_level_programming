@@ -7,5 +7,3 @@ def uniq_add(my_list=[]):
             at.append(i)
             ss = ss + i
     return ss
-
-
