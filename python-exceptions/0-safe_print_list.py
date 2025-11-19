@@ -3,9 +3,9 @@ def safe_print_list(my_list=[], x=0):
     t = 0
     try:
         for i in range(0,x):
-            print(my_list[i], end="")
+            print("{}".format(my_list[i]), end="")
             t = t + 1
     except Exception:
-        break
+        pass
     print()
     return t
