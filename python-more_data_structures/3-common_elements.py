@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+def common_elements(set_1, set_2):
+    ms = []
+    s1 = list(set_1)
+    s2 = list(set_2)
+    for i in s1:
+        if s2.count(i) >= 1:
+            ms.append(i)
+    return set(ms)
