@@ -12,5 +12,6 @@ def list_division(my_list_1, my_list_2, list_length):
         ml.append(0)
     except IndexError:
         print("out of range")
+        ml.append(0)
     finally:
         return ml
