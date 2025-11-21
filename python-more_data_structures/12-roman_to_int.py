@@ -1,4 +1,4 @@
-#!/usr/bin/python3 
+#!/usr/bin/python3
 ro = {
     'I': 1,
     'V': 5,
@@ -9,6 +9,8 @@ ro = {
     'M': 1000
 }
 roa = ['I', 'V', 'X', 'L', 'C', 'D', 'M',]
+
+
 def check(fi, la):
     if roa.index(fi) >= roa.index(la):
         return True
