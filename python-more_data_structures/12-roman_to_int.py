@@ -15,7 +15,7 @@ def check(f,l):
     else:
         return False
 def roman_to_int(roman_string):
-    if type(roman_string) != int or roman_string is None:
+    if type(roman_string) != str or roman_string is None:
         return 0
     su = 0
     if len(roman_string) == 1:
