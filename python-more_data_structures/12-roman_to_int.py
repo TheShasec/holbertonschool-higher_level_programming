@@ -25,8 +25,5 @@ def roman_to_int(roman_string):
             su += ro[roman_string[i]]
         else:
             su -= ro[roman_string[i]]
-    if check(roman_string[-1], roman_string[-2]):
-        su += ro[roman_string[-1]]
-    else:
-        su -= ro[roman_string[-1]]
+    su += ro[roman_string[-1]]
     return su
