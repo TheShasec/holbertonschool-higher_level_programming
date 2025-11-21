@@ -15,16 +15,18 @@ def check(f,l):
     else:
         return False
 def roman_to_int(roman_string):
-    if type(x) != int or x is None:
+    if type(roman_string) != int or roman_string is None:
         return 0
     su = 0
+    if len(roman_string) == 1:
+        return su + ro[roman_string[0]]
     for i in range(len(roman_string)-1):
         if check(roman_string[i], roman_string[i+1]):
             su += ro[roman_string[i]]
         else:
             su -= ro[roman_string[i]]
     if check(roman_string[-2], roman_string[-1]):
-        su += ro[roman_string[i]]
+        su += ro[roman_string[-1]]
     else:
-        su -= ro[roman_string[i]]
+        su -= ro[roman_string[-1]]
     return su
