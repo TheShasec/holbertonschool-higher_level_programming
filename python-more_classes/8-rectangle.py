@@ -1,4 +1,4 @@
-i#!/usr/bin/python3
+#!/usr/bin/python3
 "dsafdfdsf"
 
 
@@ -59,9 +59,9 @@ class Rectangle:
 
     def bigger_or_equal(rect_1, rect_2):
         if rect_1.area() > rect_2.area():
-            return True
+            return rect_1
         else:
-            return False
+            return rect_2
 
     def __init__(self, width=0, height=0):
         self.width = width
