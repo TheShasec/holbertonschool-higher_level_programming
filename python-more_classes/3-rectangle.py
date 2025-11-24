@@ -40,9 +40,9 @@ class Rectangle:
     def __repr__(self):
         at = ""
         for i in range(self.height):
-            for j in range(self.width):
-                at += "#"
-            at += "\n"
+            at += "#" * self.width
+            if i != self.height - 1:
+                at += "\n"
         return at
 
     def __init__(self, width=0, height=0):
