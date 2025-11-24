@@ -47,6 +47,9 @@ class Rectangle:
                 at += "\n"
         return at
 
+    def __repr__(self):
+        return f"Rectangle({self.width}, {self.height})"
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
