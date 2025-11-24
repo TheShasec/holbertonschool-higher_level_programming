@@ -6,7 +6,7 @@ class Rectangle:
     "dafsdf"
 
     number_of_instances = 0
-
+    print_symbol = "#"
     @property
     def width(self):
         return self.__width
@@ -44,7 +44,7 @@ class Rectangle:
             return ""
         at = ""
         for i in range(self.height):
-            at += "#" * self.width
+            at += self.print_symbol * self.width
             if i != self.height - 1:
                 at += "\n"
         return at
