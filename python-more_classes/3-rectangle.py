@@ -37,7 +37,7 @@ class Rectangle:
             return 0
         return 2 * (self.width + self.height)
 
-    def __repr__(self):
+    def __str__(self):
         at = ""
         for i in range(self.height):
             at += "#" * self.width
