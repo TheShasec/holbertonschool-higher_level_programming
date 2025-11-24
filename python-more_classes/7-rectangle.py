@@ -7,6 +7,7 @@ class Rectangle:
 
     number_of_instances = 0
     print_symbol = "#"
+
     @property
     def width(self):
         return self.__width
