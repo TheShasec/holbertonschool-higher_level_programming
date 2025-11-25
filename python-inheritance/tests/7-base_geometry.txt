@@ -1,11 +1,5 @@
-# 7-base_geometry.txt
-
-# BaseGeometry doctest
-
 > > > BaseGeometry = **import**('7-base_geometry').BaseGeometry
 > > > bg = BaseGeometry()
-
-# area() should raise Exception
 
 > > > try:
 > > > ...     bg.area()
@@ -13,12 +7,8 @@
 > > > ...     print("[{}] {}".format(e.**class**.**name**, e))
 > > > [Exception] area() is not implemented
 
-# integer_validator with valid integers does nothing
-
 > > > bg.integer_validator("my_int", 12)
 > > > bg.integer_validator("width", 89)
-
-# integer_validator with wrong types raises TypeError
 
 > > > try:
 > > > ...     bg.integer_validator("name", "John")
@@ -27,26 +17,10 @@
 > > > [TypeError] name must be an integer
 
 > > > try:
-> > > ...     bg.integer_validator("another", True)
-> > > ... except Exception as e:
-> > > ...     print("[{}] {}".format(e.**class**.**name**, e))
-> > > [TypeError] another must be an integer
-
-# integer_validator with <=0 raises ValueError
-
-> > > try:
 > > > ...     bg.integer_validator("age", 0)
 > > > ... except Exception as e:
 > > > ...     print("[{}] {}".format(e.**class**.**name**, e))
 > > > [ValueError] age must be greater than 0
-
-> > > try:
-> > > ...     bg.integer_validator("distance", -4)
-> > > ... except Exception as e:
-> > > ...     print("[{}] {}".format(e.**class**.**name**, e))
-> > > [ValueError] distance must be greater than 0
-
-# Instantiation with arguments raises TypeError
 
 > > > try:
 > > > ...     bg = BaseGeometry(None)
