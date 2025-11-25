@@ -2,7 +2,7 @@
 """3323"""
 
 
-class Rectangle(BaseGeometry):
+class Rectangle:
     """43434"""
 
     def __init__(self, width, height):
