@@ -8,7 +8,7 @@ class MyList(list):
         super().append(value)
 
     def __str__(self):
-        return self
+        return str(self)
 
     def print_sorted(self):
         al = self[::]
