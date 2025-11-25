@@ -4,6 +4,4 @@
 def is_same_class(obj, a_class):
     """32432"""
 
-    if isinstance(obj, a_class):
-        return True
-    return False
+    return type(obj) == a_class
