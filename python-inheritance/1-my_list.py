@@ -4,6 +4,12 @@
 class MyList(list):
     """3323"""
 
+    def append(self, value):
+        super().append(value)
+
+    def __str__(self):
+        return self
+
     def print_sorted(self):
         al = self[::]
         al.sort()
