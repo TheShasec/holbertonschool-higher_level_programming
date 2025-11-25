@@ -1,34 +1,17 @@
 #!/usr/bin/python3
-"dsafdfdsf"
+"""3323"""
 
 
-class Rectangle:
-    "dafsdf"
+import BaseGeometry from "7-base_geometry"
+class Rectangle(BaseGeometry):
+    """43434"""
 
-    @property
-    def width(self):
-        return self.__width
-
-    @width.setter
-    def width(self, vl):
-        if not isinstance(vl, int):
+    def __init__(self, width, height):
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        if vl < 0:
-            raise ValueError("width must be >= 0")
-        self.__width = vl
-
-    @property
-    def height(self):
-        return self.__height
-
-    @height.setter
-    def height(self, vl):
-        if not isinstance(vl, int):
+        if type(height) is not int:
             raise TypeError("height must be an integer")
-        if vl < 0:
-            raise ValueError("height must be >= 0")
-        self.__height = vl
-
-    def __init__(self, width=0, height=0):
-        self.width = width
-        self.height = height
+        if not hasattr(self, 'width'):
+            raise AttributeError("'Rectangle' object has no attribute 'width'")
+        if not hasattr(self, 'height'):
+            raise AttributeError("'Rectangle' object has no attribute 'height'")
