@@ -2,7 +2,6 @@
 """3323"""
 
 
-import BaseGeometry from "7-base_geometry"
 class Rectangle(BaseGeometry):
     """43434"""
 
