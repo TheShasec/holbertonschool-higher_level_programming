@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
 """3323"""
 
 
+import json
 def to_json_string(my_obj):
     """3423"""
 
