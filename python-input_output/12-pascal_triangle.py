@@ -15,6 +15,6 @@ def pascal_triangle(n):
     while it < n :
         a = []
         for i in range(0, it+1):
-            a.append(fl(it)/(fl(i)*fl(it-i)))
+            a.append(fl(it)//(fl(i)*fl(it-i)))
         print(a)
         it += 1
