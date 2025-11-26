@@ -22,11 +22,11 @@ Is Student: {self.is_student}
 
     def serialize(self, filename):
         with open(filename, "w") as mf:
-            pickle.dump(mf,"""
+            pickle.dump("""
 Name: {self.name}
 Age: {self.age}
 Is Student: {self.is_student}
-""")
+""", mf)
     
     @classmethod
     def deserialize(cls, filename):
