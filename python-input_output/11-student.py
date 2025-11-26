@@ -19,5 +19,5 @@ class Student:
             return md
         return self.__dict__
     def reload_from_json(self, json):
-        for i, k in json:
+        for i, k in json.items():
             self.__dict__[i] = k
