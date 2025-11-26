@@ -19,8 +19,5 @@ class Student:
             return md
         return self.__dict__
     def reload_from_json(self, json):
-        ti = json[1:-1].split(",")
-        for i in ti:
-            key = i.split(":")[0].strip()
-            value = i.split(":")[1].strip()
-            self.__dict__[key] = value
+        for i, k in json:
+            self.__dict__[i] = k
