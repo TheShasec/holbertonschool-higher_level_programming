@@ -2,7 +2,7 @@
 """2343234"""
 
 
-class Studend:
+class Student:
     """3234"""
 
     def __init__(self, first_name, last_name, age):
