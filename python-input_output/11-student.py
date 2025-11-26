@@ -17,7 +17,8 @@ class Student:
                 if i in attrs:
                     md[i] = j
             return md
-        return self.__dict__
+        return self.__dict_
+    _
     def reload_from_json(self, json):
         for i, k in json.items():
             self.__dict__[i] = k
