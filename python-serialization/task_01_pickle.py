@@ -26,5 +26,8 @@ Is Student: {self.is_student}
     
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, "rb") as mf:
-            return pickle.load(mf)
+        try:
+            with open(filename, "rb") as mf:
+                return pickle.load(mf)
+        except Exception:
+            return None
