@@ -2,7 +2,7 @@
 """3243"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """@34324"""
 
     with open(filename, "a") as mf:
