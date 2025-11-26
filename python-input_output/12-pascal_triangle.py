@@ -8,13 +8,15 @@ def fl(a):
         st *= i
     return st
 
+
 def pascal_triangle(n):
     """543"""
+
     if n <= 0:
         return []
     az = []
     it = 0
-    while it < n :
+    while it < n:
         a = []
         for i in range(0, it+1):
             a.append(fl(it)//(fl(i)*fl(it-i)))
