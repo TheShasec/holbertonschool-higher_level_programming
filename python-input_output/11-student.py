@@ -2,9 +2,6 @@
 """2343234"""
 
 
-import json
-
-
 class Student:
     """3234"""
 
@@ -22,7 +19,8 @@ class Student:
             return md
         return self.__dict__
     def reload_from_json(self, json):
-        di = json.loads(json)
-        for i, k in di.items():
-            self.__dict__[i] = k
-
+        ti = json[1:-1].split(",")
+        for i in ti:
+            key = i.split(":")[0].strip()
+            value = i.split(":")[1].strip()
+            self.__dict__[key] = value
