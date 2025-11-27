@@ -9,8 +9,9 @@ def convert_csv_to_json(filename):
     """ 43 """
     try:
         with open(filename, "r") as mf:
-            reader = csv.DictReader(mf)
-            json.dump(list(reader), "data.json")
+            data = csv.DictReader(mf)
+        with open(filename, "w") as mf:
+            json.dump(list(data), "data.json")
         return True
     except Exception:
         return False
