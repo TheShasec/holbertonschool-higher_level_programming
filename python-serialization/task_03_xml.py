@@ -15,7 +15,7 @@ def deserialize_from_xml(filename):
 
 def serialize_to_xml(dictionary, filename):
     with open(filename, "wb") as mf:
-        root = ET.Element("root")
+        root = ET.Element("data")
         for key, value in dictionary.items():
             elem = ET.SubElement(root, key)
             elem.text = value
