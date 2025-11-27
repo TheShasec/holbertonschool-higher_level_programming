@@ -14,10 +14,10 @@ def deserialize_from_xml(filename):
         return di
 
 def serialize_to_xml(dictionary, filename):
-    with open(filename, "w") as mf:
+    with open(filename, "wb") as mf:
         root = ET.Element("root")
         for key, value in dictionary.items():
             elem = ET.SubElement(root, key)
             elem.text = value
         tree = ET.ElementTree(root)
-        tree.write(mf)
+        tree.write(mf, encoding="utf-8")
