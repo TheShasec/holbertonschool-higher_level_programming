@@ -6,18 +6,22 @@ import xml.etree.ElementTree as ET
 
 
 def deserialize_from_xml(filename):
-    with open(filename, "r") as mf:
-        root = ET.parse(mf).getroot()
-        di = {}
-        for i in root:
-            di[i.tag] = i.attrib
-        return di
+    root = ET.parse(mf).getroot()
+    di = {}
+    for i in root:
+        try:
+            value = int(child.text)
+        except ValueError:
+            try:
+                value = float(child.text)
+            except ValueError:
+                value = child.text
+    return di
 
 def serialize_to_xml(dictionary, filename):
-    with open(filename, "wb") as mf:
-        root = ET.Element("data")
-        for key, value in dictionary.items():
-            elem = ET.SubElement(root, key)
-            elem.text = value
-        tree = ET.ElementTree(root)
-        tree.write(mf, encoding="utf-8")
+    root = ET.Element("data")
+    for key, value in dictionary.items():
+        elem = ET.SubElement(root, key)
+        elem.text = str(value)
+    tree = ET.ElementTree(root)
+    tree.write(mf, encoding="utf-8")
