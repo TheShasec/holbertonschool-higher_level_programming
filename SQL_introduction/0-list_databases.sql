@@ -1,2 +1,2 @@
-/* fsojdf */
+-- fsojdf 
 SHOW DATABASES;
