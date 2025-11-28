@@ -16,6 +16,7 @@ def deserialize_from_xml(filename):
                 value = float(i.text)
             except ValueError:
                 value = i.text
+        di[i.tag] = value
     return di
 
 def serialize_to_xml(dictionary, filename):
