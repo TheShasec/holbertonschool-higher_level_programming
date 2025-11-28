@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 
 def deserialize_from_xml(filename):
-    root = ET.parse(mf).getroot()
+    root = ET.parse(filename).getroot()
     di = {}
     for i in root:
         try:
@@ -24,4 +24,4 @@ def serialize_to_xml(dictionary, filename):
         elem = ET.SubElement(root, key)
         elem.text = str(value)
     tree = ET.ElementTree(root)
-    tree.write(mf, encoding="utf-8")
+    tree.write(filename, encoding="utf-8")
