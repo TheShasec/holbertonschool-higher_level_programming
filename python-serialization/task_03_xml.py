@@ -10,12 +10,12 @@ def deserialize_from_xml(filename):
     di = {}
     for i in root:
         try:
-            value = int(child.text)
+            value = int(i.text)
         except ValueError:
             try:
-                value = float(child.text)
+                value = float(i.text)
             except ValueError:
-                value = child.text
+                value = i.text
     return di
 
 def serialize_to_xml(dictionary, filename):
