@@ -21,7 +21,7 @@ def fetch_and_save_posts():
         r = req.get(url)
         posts = r.json()
         keys = ["id", "title", "body"]
-        filtered_posts = [{field: post[field] for field in selected_fields} for post in posts]
+        filtered_posts = [{field: post[field] for field in keys} for post in posts]
         with open("posts.csv", "w", newline="", encoding="utf-8") as mf:
             writer = csv.DictWriter(mf, fieldnames=keys)
             writer.writeheader()
