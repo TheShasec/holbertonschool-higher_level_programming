@@ -11,6 +11,8 @@ if __name__ == "__main__":
     headers = {
         "Authorization": f"token {sys.argv[2]}"
     }
-    response = requests.get(url, headers=headers)
-    print(response.json()["id"])
-
+    try:
+        response = requests.get(url, headers=headers)
+        print(response.json()["id"])
+    except Exception:
+        print(None)
