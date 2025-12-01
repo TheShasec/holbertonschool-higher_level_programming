@@ -11,7 +11,7 @@ url = "https://jsonplaceholder.typicode.com/posts/"
 def fetch_and_print_posts():
     try:
         r = req.get(url)
-        print(f"Status code: {r.status_code}")
+        print(f"Status Code: {r.status_code}")
         for i in r.json():
             print(i["title"])
     except Exception:
