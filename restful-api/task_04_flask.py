@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """ 433 34  """
 
-
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+# In-memory dictionary to store user data
 users = {
     "jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"},
     "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
@@ -17,7 +17,7 @@ def home():
 
 @app.route("/data")
 def get_users():
-    return jsonify(list(users.keys()))
+    return jsonify(list(users.keys()) if users else [])
 
 @app.route("/status")
 def status():
@@ -35,6 +35,7 @@ def get_user(username):
 def add_user():
     try:
         user_data = request.get_json()
+
         if not user_data:
             return jsonify({"error": "Invalid JSON"}), 400
 
