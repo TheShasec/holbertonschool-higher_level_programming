@@ -2,9 +2,15 @@
 """ dfafsdsdf """
 
 
-import requests as req
+import requests
 import sys
 
 
 if __name__ == "__main__":
-    r = req.
+    url = "https://api.github.com/user"
+    headers = {
+        "Authorization": f"token {sys.argv[2]}"
+    }
+    response = requests.get(url, headers=headers)
+    print(response.json()["id"])
+
