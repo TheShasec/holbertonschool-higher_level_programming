@@ -10,5 +10,5 @@ if __name__ == "__main__":
     try:
         myreq = req.get(sys.argv[1])
         print(f"{myreq.text}")
-    except req.HTTPError as e:
-        print(e.status_code)
+    except req.exceptions.HTTPError as e:
+        print(e.response.status_code)
