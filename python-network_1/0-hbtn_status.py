@@ -5,8 +5,9 @@
 import urllib.request as ureq
 
 
-with ureq.urlopen("https://intranet.hbtn.io/status") as res:
-    print("Body response:")
-    print(f"\n - type: {type(res.read())}")
-    print(f"\n - content: {res.read()}")
-    print("\n - utf8 content: {}".format(res.read().decode("utf-8")))
+ with ureq.urlopen(request) as response:
+        body = response.read()
+        print("Body response:")
+        print("\t- type: {}".format(type(body)))
+        print("\t- content: {}".format(body))
+        print("\t- utf8 content: {}".format(body.decode("utf-8")))
