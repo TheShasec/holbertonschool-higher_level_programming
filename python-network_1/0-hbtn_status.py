@@ -5,7 +5,7 @@
 import urllib.request as ureq
 
 
-with ureq.urlopen(request) as response:
+with ureq.urlopen("https://intranet.hbtn.io/status") as response:
     body = response.read()
     print("Body response:")
     print("\t- type: {}".format(type(body)))
