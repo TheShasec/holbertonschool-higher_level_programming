@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ fsaf """
 
-import requests req
+import requests as req
 import sys
 
 
