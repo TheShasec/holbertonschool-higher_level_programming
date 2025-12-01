@@ -8,5 +8,5 @@ import requests as req
 if __name__ == "__main__":
     myreq = req.get("https://intranet.hbtn.io/status")
     print("Body response:")
-    print("\n - type: {}".format(type(myreq.text)))
-    print("\n - content: {}".format(myreq.text))
+    print("\t - type: {}".format(type(myreq.text)))
+    print("\t - content: {}".format(myreq.text))
