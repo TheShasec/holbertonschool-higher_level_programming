@@ -16,5 +16,5 @@ if __name__ == "__main__":
             print("No result")
         else:
             print(f"[{r.json()['id']}] {r.json()['name']}")
-    except TypeError:
+    except req.exceptions.JSONDecodeError:
         print("Not a valid JSON")
