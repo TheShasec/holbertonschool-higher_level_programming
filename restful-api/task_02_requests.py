@@ -20,7 +20,7 @@ def fetch_and_save_posts():
     try:
         r = req.get(url)
         posts = r.json()
-        keys = posts[0].keys()
+        keys = ["id", "title", "body"]
 
         with open("posts.csv", "w", newline="", encoding="utf-8") as mf:
             writer = csv.DictWriter(mf, fieldnames=keys)
