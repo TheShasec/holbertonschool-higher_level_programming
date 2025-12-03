@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-""" fasdf """
-
 from flask import Flask, render_template
 
 app = Flask(__name__)
