@@ -84,7 +84,6 @@ def products():
     source = request.args.get("source", "").lower()
     product_id = request.args.get("id")
 
-    # Convert id if provided
     if product_id:
         try:
             product_id = int(product_id)
@@ -93,7 +92,6 @@ def products():
                                    error="Invalid ID",
                                    products=None)
 
-    # Choose Data Source
     if source == "json":
         products = load_json_data(product_id)
 
@@ -108,16 +106,22 @@ def products():
                                error="Wrong source",
                                products=None)
 
-    # Handle internal errors
+    # Error from loader
     if isinstance(products, dict) and "error" in products:
         return render_template("product_display.html",
                                error=products["error"],
                                products=None)
 
+    # 🔥 REQUIRED FOR THE TEST
+    # If ID was provided but no product exists → show "Product not found"
+    if product_id and products == []:
+        return render_template("product_display.html",
+                               error="Product not found",
+                               products=None)
+
     return render_template("product_display.html",
                            error=None,
                            products=products)
-
 
 if __name__ == "__main__":
     app.run(debug=True)
