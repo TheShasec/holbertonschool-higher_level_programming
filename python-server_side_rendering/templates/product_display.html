@@ -1,56 +1,30 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <title>Products (source: {{ source }})</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    body { font-family: Arial, sans-serif; margin: 24px; }
-    table { border-collapse: collapse; width: 100%; max-width: 800px; }
-    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-    th { background: #f4f4f4; }
-    .error { color: #9c0000; background: #ffd7d7; padding: 10px; border-radius: 4px; margin-bottom: 12px; max-width: 800px; }
-    .meta { margin-bottom: 12px; color: #555; }
-  </style>
+    <title>Products</title>
 </head>
 <body>
-  <h1>Product Listing</h1>
 
-  <div class="meta">
-    <strong>Source:</strong> {{ source }}{% if requested_id is not none %} &nbsp; | &nbsp; <strong>Requested id:</strong> {{ requested_id }}{% endif %}
-  </div>
+    {% if error %}
+        <h2 style="color:red;">{{ error }}</h2>
+    {% else %}
+        <h1>Product List</h1>
+        <table border="1" cellpadding="10">
+            <tr>
+                {% for key in products[0].keys() %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
 
-  {% if error %}
-    <div class="error">
-      <strong>Error:</strong> {{ error }}
-    </div>
-  {% endif %}
-
-  {% if products %}
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Category</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for p in products %}
-          <tr>
-            <td>{{ p.name }}</td>
-            <td>{{ p.category }}</td>
-            <td>${{ '%.2f'|format(p.price) }}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  {% else %}
-    {# If there's no products and no error, show friendly message #}
-    {% if not error %}
-      <p>No products available in the selected source.</p>
+            {% for product in products %}
+                <tr>
+                    {% for value in product.values() %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
     {% endif %}
-  {% endif %}
 
 </body>
 </html>
