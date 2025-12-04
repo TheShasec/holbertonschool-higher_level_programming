@@ -11,7 +11,8 @@ def create_database():
             price REAL NOT NULL
         )
     ''')
-    cursor.execute('DELETE FROM Products')   # Ensures no duplicate inserts for repeated runs
+
+    cursor.execute("DELETE FROM Products")
 
     cursor.execute('''
         INSERT INTO Products (id, name, category, price)
@@ -19,6 +20,7 @@ def create_database():
         (1, 'Laptop', 'Electronics', 799.99),
         (2, 'Coffee Mug', 'Home Goods', 15.99)
     ''')
+
     conn.commit()
     conn.close()
 
